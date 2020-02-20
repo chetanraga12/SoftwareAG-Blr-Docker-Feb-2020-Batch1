@@ -1,0 +1,176 @@
+DevOps
+		Immediate release
+		Cost Reduction
+		Quality redefined
+================================================
+https://www.devopsschool.com/videos/387/complete-cicd-devops-implementation-from-
+
+scratch-using-jenkins-by-devopsschool/
+
+
+
+What is Docker?
+=================================
+Container mgmt tool AKA PLatform
+--------- ---- ----
+	Free
+	Open Source
+	Written in Go
+	Release
+		Community - IN TRAINING
+		Enterprise Relase - OUT OF SCOPE - KUBERNETES
+	Latest 19.X
+	
+	
+What is Container?
+	Light weight
+	Fully Packed run env for APP.
+	USER SPACE
+			WITH OWN 
+				NETWORK
+				PROCESS MAP
+				MOUNT
+		===================================
+				DONE BY DOCKER
+					With a help of KERNAL NS
+
+==============================	
+13.233.237.240
+ec2-user
+ppk 
+
+  4  docker pull jenkins
+    5  clear
+    6  clear
+    7  docker ps
+    8  clear
+    9  ps -eaf
+   10  clear
+   11  w
+   12  ps
+   13  clear
+   14  ps -eaf | grep docker
+   15  clear
+   16  docker run -d jenkins
+   17  ps -eaf | grep docker
+   18  ps -eaf | grep 10721
+   19  clear
+   20  docker run -d jenkins
+   21  docker ps
+   22  ps -eaf | grep docker
+   23  clear
+   24  clear
+   25  docker ps
+   26  docker inspect cf4998594e00 | grep -ip
+   27  docker inspect cf4998594e00 | grep -i ip
+   28  docker inspect 36828e5aac41 | grep -i ip
+   29  curcuu
+   30  curl http://172.17.0.2:8080
+   31  curl http://172.17.0.3:8080
+   32  clear
+   33  ps -eaf
+   34  clear
+   35  docker ps
+   36  docker exec cf4998594e00 ps -eaf
+   37  docker exec 36828e5aac41 ps -eaf
+   38  clear
+   39  ps -eaf
+   40  ps -eaf | grep |
+   41  clear
+   42  ps -eaf | grep docker
+   43  docker top
+   44  docker ps
+   45  docker top 36828e5aac41\
+   46  docker top 36828e5aac41
+   47  clear
+   48  history
+   48  history
+   49  clear
+   50  docker ps
+   51  docker exec cf4998594e00 df -kh
+   52  docker exec 36828e5aac41 df -kh
+   53  docker exec 36828e5aac41 ls /tmp
+   54  docker exec 36828e5aac41 touch /tmp/rajesh.txt
+   55  docker exec 36828e5aac41 ls /tmp
+   56  docker exec cf4998594e00 ls /tmp
+   57  history
+
+
+How to install Docker?
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-
+
+commuityedition-centos-rhel.html
+
+Architecture of Docker?
+=======================================================
+HUMEN -->  DOCKER CLIENT --> DOCKER DEAMON(SERVER) ----CONTAINERD--> KERNAL -> NS
+	   -----------DOCKER ENGINE---------------
+
+DOCKER CLIENT ----REST API----> DOCKER DEAMON(SERVER)
+==================================================
+
+DOCKER COMPONENTS
+	Docker Engine
+	APP-> Docker Image
+	registry
+		reposiotry
+			docker image
+	PUBLIC
+		hub.docker.com
+		gr
+		ecr
+	PVT
+		ecr
+		artifactory
+		nexus
+		registry - by Docker
+	Container
+		THE MOMENT YOU RUN - Image - You get one container
+		
+
+
+Refernce
+https://www.vagrantbox.es/
+	
+==========================
+firefox
+tomcat
+apache
+mysql
+jenkins
+oracle
+java
+selenium grid
+cache
+eclipse
+ls
+docker hub
+nexus
+artifactory
+java
+centos
+ubunut
+
+==========================
+jenkins
+	Art - WEB -NODE
+		8080 - 50000
+	java
+		OS
+====================================
+DOCKER NEEDS ROOT OR user has to be part of GROUP called "docker"
+
+LAB 1
+==================================================
+1. Install Docker?
+2. Understand what is Container and Proof.
+
+
+SoftwareAG-Blr-Docker-Feb-2020-Batch1
+
+
+
+
+
+
+
