@@ -191,6 +191,148 @@ http://bit.ly/2HHcitA
 Key Location - https://www.devopsschool.com/notes/docker/2019/
 file - 	rajesh-mumbai.ppk
 ==========================
+basic start commands
+=======================
+
+   73  which docker
+   74  ps -eaf | grep docker
+   75  clear
+   76  docker
+   77  clear
+   78  docker version
+   79  clear
+   80  docker help
+   81  clear
+   82  docker info
+   83  clear
+   84  history
+
+docker ps -a
+
+Basic workflow for containers?
+=========================================
+create -> start -> stop -> restart -> pause -> unpause -> kill -> remove
+
+ 90  docker ps -a
+   91  docker ps -a
+   92  docker create jenkins
+   93  docker ps
+   94  docker ps -a
+   95  clear
+   96  docker ps -a
+   97  docker start 7a2282f4b38e
+   98  docker ps -a
+   99  docker stop 7a2282f4b38e
+  100  docker ps -a
+  101  docker stop 7a2282f4b38e
+  102  docker restart 7a2282f4b38e
+  103  docker ps -a
+  104  clear
+  105  docker ps
+  106  docker pause 7a2282f4b38e
+  107  docker ps
+  108  docker ps
+  109  docker unpause 7a2282f4b38e
+  110  clear
+  111  docker ps
+  112  docker kill 7a2282f4b38e
+  113  docker ps
+  114  docker ps -a
+  115  clear
+  116  docker ps -a
+  117  docker rm 7a2282f4b38e
+  118  docker ps -a
+  119  history
+
+===============================
+WHAT IS RUN IN DOCKER?
+---------------------------
+create -> start -> BECOME
+$ docker run jenkins
+create -> start -> DO NOT BECOME
+$ docker run -d jenkins
+
+===============================
+WORKFLOW OF DOCKER
+==================================
+RUN or CREATE
+================
+Client -> Server -> Check Image in LR -> If not found -> Download from HUB and 
+
+Create a container.
+=========================================
+PID 1 MAGIC - Container is Running = ONLY if pid 1 is running of container.
+
+How to consume container APP?????
+=======================================
+Access a container from OUTside?
+SSH	IP _ US _ PAS
+HTTP	IP PORT
+
+
+How to go inside a container?
+	EXEC WAY
+		it execute an executables inside a container
+		If you want to go insdie??
+		- exec /bin/bash with -it way.
+
+	ATTACH WAY
+		IT ATTACHES to PID 1
+
+ 73  docker ps -a
+   74  docker inspect a51c3bfb15d7
+   75  clear
+   76  docker ps
+   77  curl http://172.17.0.2:8080
+   78
+   79  clear
+   80  clear
+   81  docker ps
+   82  docker exec a51c3bfb15d7 ls
+   83  clear
+   84  docker exec a51c3bfb15d7 man
+   85  kkkk
+   86  docker exec a51c3bfb15d7 ps
+   87  docker exec a51c3bfb15d7 top
+   88  docker exec a51c3bfb15d7 df
+   89  clear
+   90  clear
+   91  docker ps
+   92  docker exec a51c3bfb15d7 ls
+   93  clear
+   94  docker exec a51c3bfb15d7 /bin/bash
+   95  docker exec -it a51c3bfb15d7 /bin/bash
+   96  clear
+   97  docker ps
+   98  docker exec a51c3bfb15d7 ps -eaf
+   99  docker attach a51c3bfb15d7
+  100  docker ps -a
+  101  clear
+  102  docker run ubuntu
+  103  docker ps
+  104  docker ps -a
+  105  docker start a51c3bfb15d7
+  106  clear
+  107  docker ps -a
+  108  docker exec a51c3bfb15d7 /bin/bash
+  109  docker run ubuntu ls /
+  110  docker ps -a
+  111  docker run -it ubuntu
+  112  docker ps -a
+  113  clear
+  114  docker run -it -d ubuntu
+  115  docker ps
+  116  docker run -it ubuntu
+  117  docker -s
+  118  clear
+  119  docker ps -a
+  120  history
+
+
+
+
+Pause vs Unpase
+https://www.devopsschool.com/blog/docker-pause-and-unpause-explanined/
 
 
 ERROR
