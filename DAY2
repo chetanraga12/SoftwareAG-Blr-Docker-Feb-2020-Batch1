@@ -397,6 +397,178 @@ RUN touch /opt/rajesh4
 16	13.232.243.66
 
 ec2-user
+==========================
+How to share images?
+	Tar file
+  35  docker imaes
+   36  docker images
+   37  clear
+   38  docker save -o proof.tar proof
+   39  ls
+   40  clear
+   41  ls
+   42  docker images
+   43  clear
+   44  docker ps -a
+   45  docker rmi proof
+   46  clear
+   47  ls
+   48  docker load -i proof.tar
+   49  clear
+   50  docker images
+
+	hub.docker.com
+   57  clear
+   58  docker images
+   59  docker tag proof scmgalaxy/softagblr
+   60  docker images
+   61  clear
+   62  docker info
+   63  clear
+   64  docker login
+   65  clear
+   66  docker push scmgalaxy/softagblr
+   67  history
+
+
+
+	Artifactory
+============================
+CMD 
+
+ENTRYPOINT
+=====================================
+How to set PID 1???
+
+CMD
+	CMD can be replaced at run time.
+
+ENTRYPOINT
+	ENTRYPOINT CAN NOT REPLACES but any CMD passed at run time will become a 
+
+parameter.
+
+https://www.devopsschool.com/blog/top-10-containerdocker-monitoring-solutions-and-
+
+tools-in-2018/
+=======================================================================
+Docker Volume
+=======================
+	volume
+	mountfs
+	memory
+
+https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep-dive-
+
+level/
+
+
+111  ls
+  112  docker volume
+  113  ls
+  114  docker volume prune
+  115  clear
+  116  ls
+  117  docker run -d jenkins
+  118  ls
+  119  docker ps
+  120  docker stop c012b3c1fcb3
+  121  docker rm c012b3c1fcb3
+  122  clear
+  123  ls
+  124  clear
+  125  docker volume
+  126  docker volume rm 3a006f2fc28dcb9a3c970f279a21d4e5fff25c524e6e24f96877257cf8d8e39c
+  127  clear
+  128  ls
+  129  docker volume
+  130  docker volume create raj
+  131  clear
+  132  ls
+  133  cd raj/
+  134  ls
+  135  cd _data/
+  136  ls
+  137  cd ..
+  138  clear
+  139  cd ..
+  140  ls
+  141  docker run -itd -v raj:/opt/rrrr ubuntu
+  142  docker ps
+  143  docker exec a37c53438db2 df -kh
+  144  ls
+  145  cd raj/
+  146  clear
+  147  ls
+  148  cd _data/
+  149  ls
+  150  touch devops1.txt
+  151  ls
+  152  docker ps
+  153  docker exec a37c53438db2 ls /opt/rrrr
+  154  docker attach a37c53438db2
+  155  clear
+  156  ls
+  157  clear
+  158  cd ..
+  159  ls
+  160  cd ..
+  161  ls
+  162  docker ps
+  163  docker stop a37c53438db2
+  164  docker rm a37c53438db2
+  165  clear
+  166  ls
+  167  cd raj/_data/
+  168  ls
+  169  cd /opt/
+  170  ls
+  171  clear
+  172  ls
+  173  mkdir bakp
+  174  cd bakp/
+  175  ls
+  176  pwd
+  177  docker run -itd -v /opt/bakp:/opt/ttt -v raj:/opt/432423 ubuntu
+  178  docker ps
+  179  docker attach 5379a7e17f21
+  180  cd /var/lib/docker/volumes/
+  181  ls
+  182  docker attach 5379a7e17f21
+  183  ls
+  184  cd /opt/
+  185  ls
+  186  cd bakp/
+  187  ls
+  188  clear
+  189  ls
+  190  cd /var/lib/docker
+  191  clear
+  192  ls
+  193  ls
+  194  cd volumes/
+  195  clear
+  196  ls
+  197  docke run -d jenkins
+  198  docker run -d jenkins
+  199  docker run -d jenkins
+  200  ls
+  201  docker run -d -v raj:/opt/dfff jenkins
+  202  ls
+  203  history
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
