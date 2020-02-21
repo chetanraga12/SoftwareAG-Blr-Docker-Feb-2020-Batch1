@@ -1,0 +1,386 @@
+=================
+Understand a Docker Installation Structure
+================================
+$ docker info
+
+Docker Root Dir: /var/lib/docker
+Storage Driver: overlay2	???
+======================
+
+[root@ip-172-31-22-43 docker]# tree -L 1
+.
+├── builder
+├── buildkit
+├── containers		# Container META info
+├── image		# Image META INFO
+├── network		# NEtwork related files.
+├── overlay2		# Image Layer would be strored here.
+├── plugins
+├── runtimes
+├── swarm
+├── tmp
+├── trust
+└── volumes		# Volume related files.
+
+Image has collection of layers - 
+Kind of Layer - 
+		Meta Layer  - Meta of Layers
+		Data Layer - Files....
+Each layer is nothing but file system
+Start  -> 	
+	Layers get merged into ONE && One empty layer get created.
+	Merging happend using UNINON Mounts
+	ANy modification in merged layer --> Empty layer
+Stop > 
+	Merge layers get deleted.
+
+=============================================
+    1  clear
+    2  ls
+    3  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+    4  sudo yum-config-manager --add-repo 
+
+https://download.docker.com/linux/centos/docker-ce.repo
+    5  sudo yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-
+
+7.noarch.rpm
+    6  sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+    7  sudo yum install -y docker-ce
+    8  sudo yum install docker-ce
+    9  clear
+   10  ifconfig
+   11  sudo systemctl start docker
+   12  clear
+   13  ifconfig
+   14  clear
+   15  clear
+   16  docker info
+   17  clear
+   18  /var/lib/docker
+   19  cd /var/lib/docker
+   20  ls
+   21  tre
+   22  tree
+   23  yum install tree -y
+   24  clear
+   25  tree
+   26  tree -L 1
+   27  clear
+   28  ls
+   29  cd overlay2
+   30  clear
+   31  du -sh
+   32  ls
+   33  docker pull ubuntu
+   34  ls
+   35  clear
+   36  ls
+   37  docker ps -a
+   38  df -kh
+   39  clear
+   40  ls
+   41  cd ..
+   42  clear
+   43  cd containers/
+   44  ls
+   45  cd ..
+   46  ls
+   47  cd overlay2
+   48  clear
+   49  ls
+   50  docker images
+   51  docker inspect ubuntu
+   52  ls
+   53  du -sh
+   54  du -sh --max-depth=1
+   55  du -sh
+   56  du -sh  .
+   57  man du
+   58  du -sh *
+   59  du -h *
+   60  du -s *
+   61  clear
+   62  du -s *
+   63  cd d9c60cdbf86c2de8173e77754685aac413f2a9ce12c3ac2ecf8eb90d061ef142
+   64  ls
+   65  clear
+   66  ls
+   67  cd diff
+   68  ;s
+   69  clear
+   70  ls
+   71  cd ..
+   72  ls
+   73  cd ..
+   74  ls
+   75  clear
+   76  docker run -itd ubuntu
+   77  docker ps
+   78  df -kh
+   79  ls
+   80  cd 0660a0f8e04b037d94165a3a46787aae67b89214ed8b64fd9a29340c1aa0d6a1
+   81  ls
+   82  cd work
+   83  ls
+   84  cd work
+   85  ls
+   86  cd ..
+   87  ls
+   88  cd ..
+   89  ls
+   90  cd merged/
+   91  ls
+   92  cd ..
+   93  ls
+   94  clear
+   95  ls
+   96  cd ..
+   97  ls
+   98  cd -
+   99  clear
+  100  ls
+  101  cd diff/
+  102  ls
+  103  cd ..
+  104  ls
+  105  cd ..
+  106  ls
+  107  cd ..
+  108  clear
+  109  ls
+  110  cd containers/
+  111  ls
+  112  docker ps
+  113  clear
+  114  ls
+  115  du -sh aff02f40a86a3bad907bb93823cfac9c5f75ece46ba021ba4f07c1192ad3ad82
+  116  cd aff02f40a86a3bad907bb93823cfac9c5f75ece46ba021ba4f07c1192ad3ad82
+  117  ls
+  118  clear
+  119  ls
+  120  cd ..
+  121  ls
+  122  cd ..
+  123  ls
+  124  clear
+  125  ls
+  126  docker ps
+  127  docker attach aff02f40a86a
+  128  docker ps
+  129  docker diff aff02f40a86a
+  130  ls
+  131  cd overlay2
+  132  ls
+  133  cd 0660a0f8e04b037d94165a3a46787aae67b89214ed8b64fd9a29340c1aa0d6a1
+  134  ls
+  135  clear
+  136  cd merged/
+  137  ls
+  138  cd opt/
+  139  ls
+  140  cd ..
+  141  ls
+  142  cd etc/
+  143  ls
+  144  clear
+  145  ls
+  146  cd ..
+  147  ls
+  148  cd ..
+  149  ls
+  150  clear
+  151  ls
+  152  cd work/
+  153  ls
+  154  cd work/
+  155  ls
+  156  cd ..
+  157  cd ..
+  158  ls
+  159  cd  diff/
+  160  clear
+  161  ls
+  162  cd etc/
+  163  ls
+  164  cd ..
+  165  ls
+  166  cd opt/
+  167  ls
+  168  cd ..
+  169  ls
+  170  cd ..
+  171  cd ..
+  172  clear
+  173  ls
+  174  cd ..
+  175  ls
+  176  clear
+  177  ls
+  178  find . -name devopsschool.com
+  179  docker ps
+  180  docker stop aff02f40a86a
+  181  find . -name devopsschool.com
+  182  df -kh
+  183  clear
+  184  docker ps -a
+  185  docker start aff02f40a86a
+  186  df -kh
+  187  du -sh 
+
+/var/lib/docker/overlay2/0660a0f8e04b037d94165a3a46787aae67b89214ed8b64fd9a29340c1aa0d6a
+
+1/merged
+  188  history
+
+==========================================================
+How to create Image?
+==============================
+1 - Lazy Way - Existing Container.
+
+  188  history
+  189  clear
+  190  docker ps
+  191  docker attach aff02f40a86a
+  192  clear
+  193  git
+  194  docker ps
+  195  docker exec aff02f40a86a git
+  196  clear
+  197  ls
+  198  docker ps
+  199  clear
+  200  docker ps
+  201  docker stop aff02f40a86a
+  202  clear
+  203  docker ps -a
+  204  docker images
+  205  docker history ubuntu
+  206  docker commit -a"RajeshKumar" -m"git-up" aff02f40a86a git-up
+  207  docker images
+  208  docker history git-up
+  209  docker commit -m"git-up" aff02f40a86a git-up
+  210  docker commit aff02f40a86a git-up
+  211  docker commit aff02f40a86a
+  212  docker images
+  213  docker tag dd5286b65041 fff
+  214  docker images
+  215  docker tag dd5286b65041 jgjgjg
+  216  docker images
+  217  docker tag dd5286b65041 jgjgjg:v1
+  218  docker tag dd5286b65041 jgjgjg:v2
+  219  docker images
+  220  docker commit -m"git-up" aff02f40a86a git-up:56
+  221  docker images
+  222  docker rmi jgjgjg
+  223  docker images
+  224  docker run -itd jgjgjg
+  225  docker run -itd jgjgjg:v1
+  226  docker commit -m"git-up" aff02f40a86a ubuntu
+  227  docker images
+  228  historu
+  229  history
+
+
+2. Automated way - Dockerfile
+===================================================
+Jenkins
+	JDK
+		OS
+=============================
+container is running with which user?	JENKINS
+container is running with which port?	8080
+Container is having any additional volume?
+Container is running with any ENV???	JENKINS_
+============================================================
+jenkins
+	openjdk:8-jdk
+		buildpack-deps:buster-scm
+				buildpack-deps:buster-curl
+					debian:buster
+						scratch
+==================================================================
+INSTRUMENTS.....
+EACH LINE OF DOCKERFILE WOULD CREATE ONE LAYER
+					 ======
+# for comments.
+
+Next layer would be creating from the Container of PREVIOUS LAYER.
+
+
+
+FROM 
+RUN 
+ARG 
+ENV 
+VOLUME 
+COPY 
+EXPOSE 
+USER 
+
+
+ENTRYPOINT 
+CMD
+
+
+
+FROM ubuntu
+MAINTAINER Rajesh kumar devops@Rajeshkumar.xyz
+RUN apt-get update && apt-get install git -y
+ENV RAJ_HOME /opt/rajesh
+RUN apt-get install vim -y
+
+
+FROM ubuntu
+RUN touch /opt/rajesh1
+RUN touch /opt/rajesh2
+RUN touch /opt/rajesh3
+RUN touch /opt/rajesh4
+
+
+ 230  clear
+  231  clear
+  232  docker run -d jenkins
+  233  clear
+  234  docker ps
+  235  docker exec b3a2f4330711 ps -a
+  236  docker exec b3a2f4330711 ps -eaf
+  237  docker exec 0a57ff1404c7 ps -eaf
+  238  docker ps
+  239  clear
+  240  df -kh
+  241  clear
+  242  docker ps
+  243  docker exec b3a2f4330711 df -kh
+  244  clear
+  245  docker ps
+  246  docker inspect b3a2f4330711
+  247  clear
+  248  docker ps
+  249  docker exec b3a2f4330711 env
+  250  clear
+  251  ls
+  252  cd
+  253  ls
+  254  mkdir raj
+  255  clear
+  256  ls
+  257  cd raj/
+  258  lc
+  259  clear
+  260  ls
+  261  vi dockerfile
+  262  docker build -t raj .
+  263  docker images
+  264  clear
+  265  ls
+  266  vi proof
+  267  docker build -t proof -f proof .
+  268  clear
+  269  docker inspect proof
+  270  history
+
+
+
+
+
+
