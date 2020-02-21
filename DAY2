@@ -557,6 +557,128 @@ level/
   202  ls
   203  history
 
+===============================================================================
+=============================================================================
+Docker networking
+========================================
+NETWORKING IS NETWORKING.
+=============================
+Default Driver
+	- BRIDGE
+		Default Bridge 0
+	- HOST
+	- NONE
+
+https://www.devopsschool.com/notes/docker/commands-collections/docker-networking.txt
+=======================================================================================
+docker compose 
+			Dev team
+
+RUN 
+	NAME
+	PORT
+	NETW
+	VOl
+	EnV
+	LINK
+===================================================			COMPOSE
+	BUILD		RUN - 5		STOP		RM		
+Web	1		1		1		1		SERVICE	
+
+APP	2		2		2		2		SERVICE	
+
+DB	3		3		3		2		SERVICE	
+===============================================================
+12 COMMAND
+===========================
+Docker compose
+		SERVICES
+			SERVICE1
+				BUILD
+				IMAGE
+				ENV
+				PORT
+				VOLUMNE
+				NETWORK
+			SERVICE2
+				BUILD
+				IMAGE
+				ENV
+				PORT
+				VOLUMNE
+				NETWORK
+			SERVICE3
+				BUILD
+				IMAGE
+				ENV
+				PORT
+				VOLUMNE
+				NETWORK
+		=================================
+		docker-compose.yaml
+
+		up
+		down
+		stop
+		ps
+			
+
+
+FOR LINKING
+https://www.devopsschool.com/tutorial/docker/labs/docker/docker-lab-6-link.html
+
+=====================================================
+TUTORIALS
+https://www.devopsschool.com/tutorial/
+
+VIDEOS
+https://www.devopsschool.com/videos
+https://www.youtube.com/channel/UCrXr49kBvXJeQMMl2693c4g
+
+SLIDES
+https://www.devopsschool.com/slides
+
+NOTES
+
+PDF
+https://www.devopsschool.com/pdf/
+
+QUIZ
+https://www.devopsschool.com/lms USING GMAIL ID
+
+Interview&QA
+https://www.devopsschool.com/interview/
+
+Sample Program
+github devopsschool
+===============================================
+
+Docker container in WINDOWS
+===============================
+OLD WAY
+------------
+DOCKER FOR WINDOWS ---> HYPER V --> VM(DOCKER ENGINE)
+	BASE IMAGE
+	https://hub.docker.com/publishers/microsoftowner
+
+NEW WAY
+	Container
+
+http://devopscertification.co/
+=======================================
+SUbject - DCOKER CERTIFIED ENGINEER
+Full Name - 
+Gmail ID
+Corp Email iD - 
+contact@DevOpsSchool.com | biraj@DevOpsSchool.com
+=========================================
+How to reach out to trainer
+rajeshkumar.xyz
+
+
+
+
+
 
 
 
